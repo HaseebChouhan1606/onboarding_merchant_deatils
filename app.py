@@ -2805,7 +2805,7 @@ app = Flask(__name__)
 app.secret_key = 'haseeb_key'  # Change this to a random secret key
 
 # Google Sheets configuration
-GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyN-kwS8MMUohF9-B_J0ANaohOAgWCGfZYJGzvVLLSoh0MipEmsNlQnA0MEcH-tN3nn/exec"  # Replace with your Google Apps Script web app URL
+GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbx5Jf6-Z2pcvS0a4C4jy4O5OsQtWX7JjDvhaynOtVkDYjZ_2aBUtgFdFmMngF6y_XO6/exec"  # Replace with your Google Apps Script web app URL
 
 # Create temp directory for PDFs
 TEMP_PDF_DIR = tempfile.mkdtemp()
@@ -2866,7 +2866,7 @@ def generate_filled_pdf(texts, safe_name):
 def update_google_sheet(data):
     """Update Google Sheets with form data"""
     try:
-      if not GOOGLE_SHEETS_URL or GOOGLE_SHEETS_URL == "https://docs.google.com/spreadsheets/d/1lXsUaB6PXKbTfkabKTunSlhGEvczxI45gjN4C3kZGCc/edit?usp=sharing":
+      if not GOOGLE_SHEETS_URL or GOOGLE_SHEETS_URL == "https://docs.google.com/spreadsheets/d/14z_r8qoBQc-ZZI6sIr9eTeQwubdLWDiDAZXirz1r47s/edit?usp=sharing":
         return False, "Google Sheets Web App URL not configured. Please deploy your Apps Script as a web app and set the URL."  
       # Prepare data for Google Sheets (as a row)
       sheet_data = [
@@ -4214,7 +4214,7 @@ def update_google_sheet_route():
 
 if __name__ == "__main__":
     # IMPORTANT: Add your Google Sheets URL here
-    GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbyN-kwS8MMUohF9-B_J0ANaohOAgWCGfZYJGzvVLLSoh0MipEmsNlQnA0MEcH-tN3nn/exec" 
+    GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbx5Jf6-Z2pcvS0a4C4jy4O5OsQtWX7JjDvhaynOtVkDYjZ_2aBUtgFdFmMngF6y_XO6/exec" 
     print("=" * 50)
     print("PDF Direct Download Flask App")
     print("=" * 50)
