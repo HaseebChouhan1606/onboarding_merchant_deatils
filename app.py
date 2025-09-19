@@ -2941,7 +2941,7 @@ def update_google_sheet(data):
       return False, f"Unexpected error: {str(e)}"
 
 # ---------------- HTML FORM TEMPLATE ----------------
-form_html = """
+form_html = r"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
