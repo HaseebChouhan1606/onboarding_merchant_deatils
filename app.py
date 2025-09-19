@@ -2787,8 +2787,6 @@
 
 
 
-
-
 from flask import Flask, render_template_string, request, send_file, redirect, url_for, session
 from PyPDF2 import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
@@ -2805,7 +2803,7 @@ app = Flask(__name__)
 app.secret_key = 'haseeb_key'  # Change this to a random secret key
 
 # Google Sheets configuration
-GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbx5Jf6-Z2pcvS0a4C4jy4O5OsQtWX7JjDvhaynOtVkDYjZ_2aBUtgFdFmMngF6y_XO6/exec"  # Replace with your Google Apps Script web app URL
+GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycby-iKgzNkSM2_O2XK01LEDdhsrDSQLx1xX4yiRCif8aeTrnw9YHabKX7T6atXFkZeWFeg/exec"  # Replace with your Google Apps Script web app URL
 
 # Create temp directory for PDFs
 TEMP_PDF_DIR = tempfile.mkdtemp()
@@ -2866,7 +2864,7 @@ def generate_filled_pdf(texts, safe_name):
 def update_google_sheet(data):
     """Update Google Sheets with form data"""
     try:
-      if not GOOGLE_SHEETS_URL or GOOGLE_SHEETS_URL == "https://docs.google.com/spreadsheets/d/14z_r8qoBQc-ZZI6sIr9eTeQwubdLWDiDAZXirz1r47s/edit?usp=sharing":
+      if not GOOGLE_SHEETS_URL or GOOGLE_SHEETS_URL == "https://docs.google.com/spreadsheets/d/1vs8NbGvCXpXwz-3cVVjQ-8x2If6_D4eMQg21zt7m79s/edit?gid=0#gid=0":
         return False, "Google Sheets Web App URL not configured. Please deploy your Apps Script as a web app and set the URL."  
       # Prepare data for Google Sheets (as a row)
       sheet_data = [
@@ -4214,7 +4212,7 @@ def update_google_sheet_route():
 
 if __name__ == "__main__":
     # IMPORTANT: Add your Google Sheets URL here
-    GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbx5Jf6-Z2pcvS0a4C4jy4O5OsQtWX7JjDvhaynOtVkDYjZ_2aBUtgFdFmMngF6y_XO6/exec" 
+    GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycby-iKgzNkSM2_O2XK01LEDdhsrDSQLx1xX4yiRCif8aeTrnw9YHabKX7T6atXFkZeWFeg/exec" 
     print("=" * 50)
     print("PDF Direct Download Flask App")
     print("=" * 50)
