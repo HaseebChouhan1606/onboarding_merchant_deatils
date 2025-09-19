@@ -4227,4 +4227,5 @@ if __name__ == "__main__":
     # Clean up old files on startup
     cleanup_old_files()
     
-    app.run(debug=True, port=5500)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
